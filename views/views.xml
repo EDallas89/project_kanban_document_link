@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+    <!-- model.name inherit kanban view -->
+    <record id="view_id" model="ir.ui.view">
+      <field name="name">project.kanban.document.link</field>
+      <field name="model">project.project</field>
+      <field name="inherit_id" ref="project.view_project_kanban"/>
+      <field name="arch" type="xml">
+        <xpath expr="//div[@class='o_project_kanban_boxes']" position="after">
+          <div class="o_project_kanban_boxes">
+            <a class="o_project_kanban_box" name="attachment_tree_view" type="object">
+              <div>
+                <field string="Documentos" name="doc_count" widget="statinfo"/>
+              </div>
+            </a>
+          </div>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
